@@ -1,0 +1,320 @@
+@ Code File Edit Selection View Go Run Terminal Window’ Help «@: @ $$ © & OH) F Q B Fridec 29 5:04PM
+
+eee < £ Untitled (Workspace) Dw Os
+o EXPLORER poo ®@ indexing.py @ Ul_rewind.py ® ingestion.py X Dy»
+\Y UNTITLED (WORKSPACE) Rewind > Database_management > @ ingestion.py >...
+52) Y Rewind 16 if cursor.fetchone() is None: > all Aa ab,  2of7 ~)=x
+> __pycache 17 cursor.execute("ALTER TABLE images ADD COLUMN processed BOOLEAN DEFAULT @") —
+ae _ 18 conn. commit ()
+> Audio 19
+\ Database_management 20 # Récupérez tous les textes non traités de la table images
+= app.log 21 cursor.execute("SELECT id, metadata FROM images WHERE processed = 0")
+
+® delete_imagedb.py 22 new_texts = cursor. fetchall()
+
+EA 87
+
+® ingestion.py 2
+————. 24 # Ecrivez les nouveaux textes dans les fichiers, s'il y ena
+® pipeline_db.py 25 if new_texts: .
+@ Regular_database.py 26 with open(all_texts_output_path, ‘a') as all_file, open(new_texts_output_path, 'w') as new_file: 1
+A ® test_imagedb.py 27 for id, text in new_texts: 4
+> record 28 # Ecrivez dans le fichier de tous les textes
+56 raf 29 all_file.write(text + '\n')
+[=] creensnots 30 # Ecrivez également dans le fichier des nouveautés
+> Transcription 31 new_file.write(text + '\n')
+= all_texts.txt 32 # Marquez le texte comme traité Ll
+= app.log 33 cursor.execute("UPDATE images SET processed = 1 WHERE id = ?", (id,))
+A Ps 34
+® indexing.
+_ ed 35 # Sauvegardez les modifications dans la base de données
+BOC WEL eXtS UX 36 conn. commit ()
+= regular_data.db 37
+® Ulrewind.py 38 # Fermez la connexion a la base de données
+39 conn. close()
+40
+41 print(f"Les nouveaux textes ont été ajoutés a {all_texts_output_path} et {new_texts_output_path}.")
+42
+PROBLEMS OUTPUT DEBUGCONSOLE TERMINAL PORTS + vy ~A xX
+Traceback (most recent call last): | >} Python
+File "/Users/dontizi/Documents/Rewind/indexing.py", line 44, in <module> >] Python
+results, _ = docsearch.search(query, search_type="vector")
+File "/Users/dontizi/anaconda3/envs/rewind/1lib/python3.11/site—packages/langchain_core/vectorstores.py", line 146, in search
+raise ValueError(
+ValueError: search_type of vector not allowed. Expected search_type to be ‘similarity’ or 'mmr'.
+(rewind) dontizi@Elyess-MBP Rewind %
+(2) @ (base) dontizi@Elyess-MBP Rewind % conda activate rewind
+@ (rewind) dontizi@Elyess-MBP Rewind % python3 record/record_photo.py
+> OUTLINE “CStopped taking screenshots.
+god (rewind) dontizi@Elyess-MBP Rewind % python3 record/record_photo.py
+> TIMELINE I
+a @oAo0 Wo GitHub Desktop Ln 30,Col63 Spaces:4 UTF-8 LF {§ Python 3.11.5 (‘rewind':conda)
+
+°)
+
+SGS8660020 @ E2008 ©
+
+@ = GitHubDesktop File Edit View Repository Branch Window Help «2 @G $ © & HT) F Q Sf Fridec 29 5:04PM
+< P£ Untitled (Workspace) | | ag
+oO EXPLORER ® indexing.py @ Ul_rewind.py ® ingestion.py X Dy
+\ UNTITLED (WORKSPACE) eee
+52) Y Rewind [Current Repository ~ Pp Current Branch + Fetch origin TV =x
+> __pycache__ = localLLAMA_Robot main ~ Last fetched 7 minutes ago
+ja > Audio Sr 3 ner .
+janges istory i it -*-
+Y Database_management first commit ~+
+_ bo.wei I db55f1f (Cc 35 -7
+S = app.log ® No Branches to Compare @ wen OURICEEIGOM <2- Glee *
+& ® delete_imagedb.py : : 3 changed files constants.py fy} vy Ey
+yf : first commit
+Ao pagestonDy @ wenbo.wei@sap.com - 5 months ago constants.py GB t. GQ “tp 0 Ga spore Gs
+@ pipeline_db.py 4 from chromadb.config import Settings
+® Regular_database.py Merge pull request #286 from Konr... run_localGPT.py > run_lo...AMA.py 5
+A ® test_imagedb.py & PromptEngineer - 5 months ago run_lo..._API.py > run_lo..._APl.py 6 6 # https://python. langchain. com/en/latest/modules/inde
+> record Merge pull request #271 from conac... xes/document_loaders/examples/excel.html?highlight=xl
+[>] > Screenshots % PromptEngineer - 5 months ago sx#microsoft—excel
+aA 7 — from langchain.document_loaders import CSVLoader, PDF
+> Transcription 9 q .
+= all texts.txt fix duplicate entry in README.md MinerLoader, TextLoader, UnstructuredExcelLoader, Doc
+= —' 5 () Konrad Hoffner - 5 months ago Preeiloniiar
+= app.lo
+e; PP. “i Merge pull request #268 from tr-ac... 7 + from langchain.document_loaders import CSVLoader, PDF
+= indexing. py & PromptEngineer - 5 months ago MinerLoader, TextLoader, UnstructuredExcelLoader, Doc
+= new_texts.txt x2txtLoader, UnstructuredHTMLLoader, BSHTMLLoader
+= regular_data.db Merge pull request #278 from Konra... +
+® Ul_rewind.py & PromptEngineer - 5 months ago + # from bs4 import BeautifulSoup
+Merge branch 'main' into patch-1 10
+% PromptEngineer - 5 months ago 11 # load_dotenv()
+10 12 ROOT_DIRECTORY = os.path.dirname(os.path. realpath(__f
+Merge pull request #253 from imjwa... ile_))
+& PromptEngineer - 5 months ago . @@ -21,6 +23,13 @@ INGEST_THREADS = os.cpu_count() or +yv “A x
+formatting * 8 | >| Python
+c) cs « 5 months ago 21 23 CHROMA_SETTINGS = Settings( >] Python
+22 24 chroma_db_impl="duckdb+parquet", persist_director
+FB AUiee Pu Cen O24 re y=PERSIST_DIRECTORY, anonymized_telemetry=False
+() Konrad Hoffner - 5 months ago 23 25 )
+Issue 260: fixina cuda not availahle 26+ # class HTMLLoader:
+* History restored
+(2) @ (base) dontizi@Elyess-MBP Rewind % conda activate rewind
+@ (rewind) dontizi@Elyess-MBP Rewind % python3 record/record_photo.py
+> OUTLINE “CStopped taking screenshots.
+god (rewind) dontizi@Elyess-MBP Rewind % python3 record/record_photo.py
+> TIMELINE I
+Ln 30,Col63 Spaces:4 UTF-8 LF {§ Python 3.11.5 (‘rewind':conda)
+
+WE ©0A0 wo
+
+9888ae008
+
+50
+
+7e+008 ©
+
+
+€ Calendar File Edit View Window’ Help
+
+eee 8S +
+
+December 2023
+
+Sun
+
+e Math
+e Chapitre 5
+
+10
+
+e Chimie 9AM e@ Chimie
+¢ 3.33.5 9AM © 3.6 3.7 3.8
+
+17
+
+e Math 9AM e Math Exam
+e Revision 9AM
+
+24
+
+31
+
+888680020 G
+
+Mon
+
+9AM e@ Math
+9AM. e Chapitre 6
+
+11
+
+9AM | @ Chimie
+9AM. @ REVISION EXERCICES
+
+18
+
+9AM
+
+25
+
+Notes
+
+Tue
+
+9AM
+9AM
+
+12
+
+9AM
+9AM
+
+19
+
+26
+
+Day Week Month Year
+
+Wed
+
+e Math 9AM e@ Math
+e Chapitre 7 9AM. e@ Chapitre 8
+
+13
+
+e Chimie 9AM e Chimie Exam
+e REVISION EXERCICES 9AM e@ Math
+
+20
+
+27
+
+«2: @G $
+
+Thu
+
+9AM e@ Math
+9AM. e Chapitre 9
+
+14
+
+9AM e@ Math
+9AM e Revision
+
+21
+
+28
+
+Mm FQe
+Q
+
+Fri
+Dec 1
+8
+
+9AM | @ Chimie
+
+QAM | @ 3.1, 3.4
+15
+
+9AM. e@ Math
+
+9AM e Revision
+
+22
+
+Ol ia) a I< Le
+
+Fri Dec 29 5:04PM
+
+< Today >
+
+Sat
+
+9AM
+9AM
+
+16
+
+9AM
+9AM
+
+23
+
+30
+
+@ Calendar File Edit View Window Help «@: @G $ © & ©) F Q Sf Fridec 29 5:04PM
+eeeao ©®A& + Day Week — Month Year Q
+December 2023 SE=26
+Sun Mon Tue Wed Thu Fri Sat
+Dec 1 2
+S 4 5 6 7 8 9
+e Math 9AM e Math 9AM e Math 9AM e Math 9AM e Math 9AM _ @ Chimie 9AM
+e Chapitre 5 9AM. e@ Chapitre 6 9AM. e@ Chapitre 7 9AM. e@ Chapitre 8 9AM. e Chapitre 9 QAM | @ 3.1, 3.4 9AM
+10 11 12 13 14 15 16
+e Chimie 9AM e@ Chimie 9AM | @ Chimie 9AM | @ Chimie 9AM e Chimie Exam 9AM e Math 9AM. e@ Math 9AM
+O GES} SHS) 9AM ° 3.6 3.7 3.8 9AM e@ REVISION EXERCICES 9AM e@ REVISION EXERCICES 9AM e Math 9AM e Revision 9AM e Revision 9AM
+17 18 19 yA0) 21 22 23
+e Math 9AM e Math Exam 9AM
+e Revision 9AM
+24 25 26 27 28 (29) 30
+31
+“4
+j it
+
+SSS8GG0820 GOO DE+00F
+
+@ Code File Edit Selection View Go Run Terminal Window’ Help «@: @ $$ © & OH) F Q B Fridec 29 5:04PM
+a < £ Untitled (Workspace) | | $
+oO EXPLORER ® indexing.py @ Ul_rewind.py ® ingestion.py X Dy
+
+\Y UNTITLED (WORKSPACE) Rewind > Database_management > ® ingestion.py > ...
+52) Y Rewind 16 if cursor.fetchone() is None: > all Par bLe) 2 of 7 yj L=x
+> __pycache 17 cursor.execute("ALTER TABLE images ADD COLUMN processed BOOLEAN DEFAULT @") —
+ae _ 18 conn. commit ()
+ja > Audio 19
+v Database_management 20  # Récupérez tous les textes non traités de la table images
+S = app.log 21 cursor.execute("SELECT id, metadata FROM images WHERE processed = 0")
+x ® delete_imagedb.py 22 new_texts = cursor. fetchall()
+- A 23
+® ingestion.py _ a ;
+aS © pinali 24  # Ecrivez les nouveaux textes dans les fichiers, s'il y ena
+® pipeline_db.py 25 if new_texts:
+@ Regular_database.py 26 with open(all_texts_output_path, 'a') as all_file, open(new_texts_output_path, 'w') as new_file:
+A ® test_imagedb.py 27 for id, text in new_texts:
+> record 28 # Ecrivez dans le fichier de tous les textes
+56 raf 29 all_file.write(text + '\n')
+[=] creensnots 30 # Ecrivez également dans le fichier des nouveautés
+> Transcription 31 new_file.write(text + '\n')
+= all_texts.txt 32 # Marquez le texte comme traité
+= app.log 33 cursor.execute("UPDATE images SET processed = 1 WHERE id = ?", (id,))
+; * 34
+® indexing.py ccs . .
+_ 35 # Sauvegardez les modifications dans la base de données
+BOC WEL eXtS UX 36 conn. commit ()
+= regular_data.db 37
+® Ulrewind.py 38 # Fermez la connexion a la base de données
+39 conn. close()
+40
+41 print(f"Les nouveaux textes ont été ajoutés a {all_texts_output_path} et {new_texts_output_path}.")
+42
+PROBLEMS OUTPUT DEBUGCONSOLE TERMINAL PORTS + vy A x
+Traceback (most recent call last): | >} Python
+File "/Users/dontizi/Documents/Rewind/indexing.py", line 44, in <module> >] Python
+results, _ = docsearch.search(query, search_type="vector")
+File "/Users/dontizi/anaconda3/envs/rewind/1lib/python3.11/site—packages/langchain_core/vectorstores.py", line 146, in search
+raise ValueError(
+ValueError: search_type of vector not allowed. Expected search_type to be 'similarity' or 'mmr'.
+(rewind) dontizi@Elyess-MBP Rewind %
+(2) @ (base) dontizi@Elyess-MBP Rewind % conda activate rewind
+@ (rewind) dontizi@Elyess-MBP Rewind % python3 record/record_photo.py
+> OUTLINE “CStopped taking screenshots.
+god (rewind) dontizi@Elyess-MBP Rewind % python3 record/record_photo.py
+> TIMELINE I
+Ln 30, Col63 Spaces:4 UTF-8 LF {§ Python 3.11.5 (‘rewind': conda)
+
+WIJ ©0A0 wo
+~—
+
+E2008 ©
+
+ial
+—s
+

@@ -1,7 +1,7 @@
 import sqlite3
 
 # Chemin vers votre base de données SQLite
-database_path = '/Users/dontizi/Documents/Rewind/regular_data.db'
+database_path = '../Rewind/regular_data.db' # Replace it with your DB Path
 
 # Chemin et nom des fichiers où vous voulez enregistrer les textes
 all_texts_output_path = 'all_texts.txt'

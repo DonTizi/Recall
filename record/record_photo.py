@@ -2,10 +2,12 @@ import time
 import datetime
 import os
 import pyautogui
+
 # Main folder for all screenshots
 main_folder = "Screenshots"
 
 def take_screenshots_with_timestamp(interval):
+    screenshot_count = 0  # Initialize the count of screenshots
     try:
         while True:
             # Current time for folder and file naming
@@ -22,9 +24,19 @@ def take_screenshots_with_timestamp(interval):
             filename = f'Screen_{time_str}.png'
             filepath = os.path.join(daily_folder, filename)
             
-            # Uncomment the following lines to take and save the screenshot with pyautogui in your local environment
+            # Take and save the screenshot with pyautogui
             screenshot = pyautogui.screenshot()
-            screenshot.save(filepath)            
+            screenshot.save(filepath)
+            screenshot_count += 1  # Increment the screenshot count
+            
+            # Check if there are 100 screenshots and delete the 50 oldest if true
+            if screenshot_count == 100:
+                all_files = sorted(os.listdir(daily_folder))  # Get all files and sort them
+                oldest_files = all_files[:50]  # Select the 50 oldest files
+                for file in oldest_files:
+                    os.remove(os.path.join(daily_folder, file))  # Delete the file
+                screenshot_count -= 50  # Update the count after deleting
+
             time.sleep(interval)  # Wait for specified interval before taking next screenshot
     except KeyboardInterrupt:
         print("Stopped taking screenshots.")

@@ -14,8 +14,8 @@ logging.basicConfig(filename='/Users/dontizi/Documents/Rewind/app.log',
                     format='%(asctime)s: %(levelname)s: %(message)s')
 
 # Chemins vers les dossiers principaux
-chemin_images = '/Users/dontizi/Documents/Rewind/Screenshots'
-chemin_transcriptions = '/Users/dontizi/Documents/Rewind/Transcription'
+chemin_images = './Rewind/Screenshots' # Replace it with your Path
+chemin_transcriptions = './Rewind/Transcription' # Replace it with your path
 
 # Configuration de pytesseract
 # Si nécessaire, spécifiez le chemin vers tesseract ici

@@ -1,12 +1,12 @@
 import speech_recognition as sr
 import os
-folder_path = '/Users/dontizi/Documents/Rewind/Transcription/transcript_txt'  # Replace this with your desired folder path
+folder_path = ''  # Replace this with your desired folder path
 
 # Initialize recognizer
 r = sr.Recognizer()
 
 # Load the audio file
-audio_file_path = '/Users/dontizi/Documents/Rewind/Audio/recordedFile.wav'  # Replace this with your audio file path
+audio_file_path = ''  # Replace this with your audio file path
 with sr.AudioFile(audio_file_path) as source:
     audio = r.record(source)  # Read the entire audio file
 

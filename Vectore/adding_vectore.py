@@ -12,11 +12,11 @@ import sys
 
 
 # Set your Pinecone API key and environment
-pinecone_api = "cd4f4df8-d7ee-405e-86de-1f2c37485a14"
-pinecone_env = "us-west4-gcp-free"
+pinecone_api = "APIKEY"
+pinecone_env = "ENV"
 
 # Set your OpenAI API key
-openai_api = "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"
+openai_api = "APIKEY"
 
 # Initialize Pinecone
 pinecone.init(api_key=pinecone_api, environment=pinecone_env)

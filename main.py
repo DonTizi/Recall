@@ -7,7 +7,7 @@ import time
 scripts = {
     "image_record": "./Rewind/record/record_photo.py",
     "pipeline": "./Rewind/Database_management/pipeline_db.py",
-    "ingestion": "./Rewind/Database_management/ingestion.py",
+    "ingestion": "./Rewind/Database_management/ingestion.py", # Replace them with your path
     "adding_vectore": "./Rewind/Vectore/adding_vectore.py"
 }
 

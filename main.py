@@ -5,10 +5,10 @@ import time
 
 # Scripts à exécuter
 scripts = {
-    "image_record": "/Users/dontizi/Documents/Rewind/record/record_photo.py",
-    "pipeline": "/Users/dontizi/Documents/Rewind/Database_management/pipeline_db.py",
-    "ingestion": "/Users/dontizi/Documents/Rewind/Database_management/ingestion.py",
-    "adding_vectore": "/Users/dontizi/Documents/Rewind/Vectore/adding_vectore.py"
+    "image_record": "./Rewind/record/record_photo.py",
+    "pipeline": "./Rewind/Database_management/pipeline_db.py",
+    "ingestion": "./Rewind/Database_management/ingestion.py",
+    "adding_vectore": "./Rewind/Vectore/adding_vectore.py"
 }
 
 # Exécution des scripts d'enregistrement audio, d'image et du pipeline

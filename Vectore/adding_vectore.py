@@ -22,14 +22,14 @@ openai_api = "APIKEY"
 pinecone.init(api_key=pinecone_api, environment=pinecone_env)
 
 # Define the index name
-index_name = "rewind"
+index_name = "rewind" #Rename it as you like
 
 # Check if the index already exists, if not, create it
 if index_name not in pinecone.list_indexes():
     pinecone.create_index(name=index_name, metric="cosine", dimension=1536)
 
 # Load the documents using TextLoader
-loader = TextLoader("/Users/dontizi/Documents/Rewind/new_texts.txt")
+loader = TextLoader("./Rewind/new_texts.txt") # Replace it with your path
 documents = loader.load()
 # Split the documents into chunks using CharacterTextSplitter
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
